@@ -1,0 +1,247 @@
+RULE KEYWORDS
+any()
+beep
+call()
+context
+context()
+deadkey()
+dk()
+index()
+notany()
+nul
+outs()
+return
+use()
+if()
+set()
+save()
+reset()
+
+
+STRUCTURAL KEYWORDS
+begin
+begin Unicode
+group()
+group() using keys
+match
+nomatch
+store()
+
+
+
+
+Named Constants
+$xxxx
+
+
+
+
+
+Virtual keys
+
+SHIFT CODES
+SHIFT
+CTRL
+LCTRL
+RCTRL
+ALT
+LALT
+RALT
+CAPS
+NCAPS
+
+
+
+
+
+[K_xxxx]
+
+
+SPACE|A-Z|0-9|BKQUOTE|HYPHEN|EQUAL|LBRKT|RBRKT|BKSLASH|COLON|QUOTE|COMMA|PERIOD|
+SLASH|oE2|BKSP|TAB|ENTER|ESC|LEFT|UP|RIGHT|DOWN|PGUP|PGDN|HOME|END|INS|DEL|F1-9|F10-2|
+KP5|NP0-9|NPSTAR|NPPLUS|NPMINUS|NPDOT|NPSLASH|
+
+SEL|PRINT|EXEC|HELP|SEPARATOR|F13-9|F20-4|KANJI?15-9|KANJI?1C-F|oE0|oE1|oE3|oE4|oE6|oE9|
+oEA|oEB|oEC|oED|oEE|oEF|oF0-5|?00|?05|NPENTER|?06|?07|?0A|?0B|?0E|?0F|
+
+K_?1A
+K_?3A
+K_?3B
+K_?3C
+K_?3D
+K_?3E
+K_?3F
+K_?40
+K_?5B
+K_?5C
+K_?5D
+K_?5E
+K_?5F
+K_?88
+K_?89
+K_?8A
+K_?8B
+K_?8C
+K_?8D
+K_?8E
+K_?8F
+K_?92
+K_?94
+K_?95 
+
+
+K_?96
+K_?97
+K_?98
+K_?99
+K_?9A
+K_?9B
+K_?9C
+K_?9D
+K_?9E
+K_?9F
+K_?A0
+K_?A1
+K_?A2
+K_?A3
+K_?A4
+K_?A5
+K_?A6
+K_?A7
+K_?A8
+K_?A9
+K_?AA
+K_?AB
+K_?AC
+K_?AD
+K_?AE
+K_?AF
+K_?B0
+K_?B1
+K_?B2
+K_?B3
+K_?B4
+K_?B5
+K_?B6
+K_?B7
+K_?B8
+K_?B9
+K_?C1
+K_?C2
+K_?C3
+K_?C4
+K_?C5
+K_?C6
+K_?C7
+K_?C8
+K_?C9
+K_?CA
+K_?CB
+K_?CC
+K_?CD
+K_?CE
+K_?CF
+K_?D0
+K_?D1
+K_?D2
+K_?D3
+K_?D4
+K_?D5
+K_?D6
+K_?D7
+K_?D8
+K_?D9
+K_?DA
+K_oDF
+K_?E5
+K_?E7
+K_?E8
+K_?F6
+K_?F7
+K_?F8
+K_?F9
+K_?FA
+K_?FB
+K_?FC
+K_?FD
+K_?FE
+K_?FF
+
+
+
+ResERVERVED VIRTUAL KEYS   --  *red**
+
+K_SHIFT
+K_CONTROL
+K_ALT
+K_CAPS
+K_NUMLOCK
+K_SCROLL
+K_LBUTTON
+K_MBUTTON
+K_RBUTTON
+K_CANCEL
+K_PAUSE
+K_PRTSCN
+
+
+HEADER KEYWORDS
+bitmap
+bitmaps  -- obsolete
+caps always off
+caps on only
+shift free caps
+copyright
+hotkey
+language
+layout  -- obsolete
+message
+name
+version
+
+
+SYSYTEM STORES
+store(&bitmap)
+store(&capsalwaysoff)
+store(&capsononly)
+store(&shiftfreescaps)
+store(&copyright)
+store(&ethnologuecode)
+store(&hotkey)
+store(&includecodes)
+store(&language)
+store(&message)
+store(&mnemoniclayout)
+store(&name)
+store(&version)
+
+VKV SYSTEM STORES
+store(&VisualKeyboard)
+
+KMW SYSTEM STORES
+store(&KMW_Help)
+store(&KMW_HelpFile)
+store(&KMW_RTL)
+store(&KMW_EmbedJS)
+
+COMPILE TARGETS
+$keyman:
+$keymanweb:
+$keymanonly:
+$weaver:
+$kmfl:
+
+
+_context_ + _keystroke_ > _output_
+
+
+CHARACTER STRINGS
+
+'...'
+"..."
+d32 - d1114111
+x20 - x10FFFF
+40 - 4177777
+U+0020 - U+10FFFF
+
+

@@ -1,0 +1,9 @@
+family csl
+
+
+
+
+keywords [any beep call context deadkey dk index notany nul outs
+            return use if set save reset
+]
+keyword_style CSL_IDENTIFIER => CSL_WORD
