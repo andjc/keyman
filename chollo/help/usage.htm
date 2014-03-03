@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Dhøg Cøllø keyboard layout</title>
+    <style type='text/css'>               
+        html, body { cursor: default; padding: 0; margin: 4px 4px 0 4px; overflow: auto }
+        div, p { font: 9pt Verdana,Arial; }
+        span.key, tr.key td { border: solid 1px #808080; background: #c0c0c4; margin: 2px; padding: 2px 4px; width: 1em; font: bold 10pt Tahoma; text-align: center; }
+        span.key { display: inline-block }
+        td.over { background: #c0c0ff; }
+        div.table { text-align: center; padding: 4px }
+        tr.out td { text-align: center; font: bold 10pt Verdana,Arial; color: blue; cursor: hand }
+    </style>                    
+    <script type='text/javascript'><!--
+    window.onload = function() {
+      var e = document.getElementsByTagName('td');
+      for(var i = 0; i < e.length; i++) {
+        if(e[i].parentElement.className == 'out') {
+          e[i].onmouseover = tagover;
+          e[i].onmouseout = tagout;
+          e[i].onclick = tagclick;
+        }
+      }
+    }
+    
+    function tagover()
+    {
+      window.event.srcElement.className = 'over';
+    }
+    
+    function tagout()
+    {
+      window.event.srcElement.className = '';
+    }
+                                                                             
+    function touni(t)
+    {     
+      var s = '';
+      for(var i = 0; i < t.length; i++)
+      {                   
+        var v = t.charCodeAt(i);
+        ch = v.toString(16).toUpperCase();
+        while(ch.length < 4) ch='0'+ch;
+        if(s != '') s += ' ';
+        s += 'U+'+ch;
+      }
+      return s;
+    }
+    
+    function tagclick()
+    {
+      location.href='keyman:insertchars?chars='+encodeURIComponent(touni(window.event.srcElement.innerText));
+    }
+
+    function boo()
+    {
+	location.href='keyman:insertchars?chars=U%2b1234';
+	}
+
+--></script>
+</head>
+<body>
+
+<div class='title'><b>Dhøg Cøllø keyboard Usage Tips</b></div>
+
+<div>Type any of the keys below to get the corresponding output.</div>
+
+<div class='table'>
+<table>
+  <tr class='key'><td>s</td><td>S</td><td>q</td><td>Q</td><td>f</td><td>F</td><td>x</td><td>X</td><td>v</td><td>V</td></tr>
+  <tr class='out'><td>ä</td><td>Ä</td><td>ë</td><td>Ë</td><td>ï</td><td>Ï</td><td>ö</td><td>Ö</td><td>ø</td><td>Ø</td></tr>
+</table>           
+</div>
+
+
+
+</body>
+</html>
+
+

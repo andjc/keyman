@@ -1,0 +1,148 @@
+﻿c madi.kmn
+c 
+c Maʼdi 0.1
+c 
+c http://www.openroad.net.au/madi
+c 
+c Keyboard layout designed for Maʼdi.
+c 
+c This keyboard package requires a commercial program Keyman Desktop.
+c Which is available from http://www.tavultesoft.com/
+c 
+c This keyboard package is free software: you can redistribute it and/or modify
+c it under the terms of the GNU General Public License as published by
+c the Free Software Foundation, version 3 of the License.
+c 
+c This program is distributed in the hope that it will be useful,
+c but WITHOUT ANY WARRANTY; without even the implied warranty of
+c MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+c GNU General Public License for more details.
+c 
+c You should have received a copy of the GNU General Public License
+c along with this program.  If not, see <http://www.gnu.org/licenses/>.
+c 
+c Keyboard documentation is licensed under the Creative Commons
+c Attribution-Non-Commercial-Share Alike 3.0 Australia License.
+c To view a copy of this licence, visit
+c http://creativecommons.org/licenses/by-nc-sa/3.0/au/
+c 
+c This keyboard source file was developed by the Social Inclusion Team in the
+c Public Libraries and Community Engagement Division,
+c a division of the State Library of Victoria, as part of
+c the Open Road project’s Language enablement initiative.
+c 
+c 
+c Versions:
+c 
+c 0.1 : Test version. Preliminary layout.
+c 
+c 
+c Andrew Cunningham    2012-02-06
+c andrewc AT vicnet.net.au
+c lang.support AT gmail.com
+
+store(&VERSION) '8.0'
+store(&NAME) 'Mãʼdí tị'
+store(&COPYRIGHT) '© 2012 State library of Victoria and Bosco Opi'
+store(&VISUALKEYBOARD) 'madi.kvk'
+store(&MESSAGE) 'Maʼdi language Unicode keyboard layout.' 
+store(&MNEMONICLAYOUT) "1"
+store(&ETHNOLOGUECODE) 'mhi'
+store(&BITMAP) 'madiv2.ico'
+
+begin Unicode > use(main)
+
+store(vowel) "aeiouAEIOU"
+store(light2heavy) "eiouEIOU"
+store(heavy) U+1eb9 U+1ecb U+1ecd U+1ee5 U+1eb8 U+1eca U+1ecc U+1ee4  
+store(extvowel) outs(vowel) outs(heavy)
+
+store(light_high) U+00e1 U+00e9 U+00ed U+00f3 U+00fa U+00c1 U+00c9 U+00cd U+00d3 U+00da 
+store(light_low) U+00e3 U+1ebd U+0129 U+00f5 U+0169 U+00c3 U+1ebc U+0128 U+00d5 U+0168
+store(light_falling) U+00e2 U+00ea U+00ee U+00f4 U+00fb U+00c2 U+00ca U+00ce U+00d4 U+00db
+
+group(main) using keys
+ 
+c light vowel - high tone)
+any(vowel) + [']'] > index(light_high,1)
+notany(extvowel) + [']'] > context
+any(light_high) + [CTRL K_BKSP] > index(vowel,1)
+
+c light vowel - low tone
+any(vowel) + [SHIFT ']'] > index(light_low,1)
+notany(extvowel) + [SHIFT ']'] > context  
+any(light_low) + [CTRL K_BKSP] > index(vowel,1) 
+
+c light vowel - falling tone
+any(vowel) + ['\'] > index(light_falling,1)
+notany(extvowel) + ['\'] > context
++ [SHIFT '\'] > nul
+any(light_falling) + [CTRL K_BKSP] > index(vowel,1) 
+
+c heavy vowels
+any(light2heavy) + ['['] > index(heavy,1) 
+notany(light2heavy) + ['['] > context 
++ [SHIFT '['] > nul  
+any(heavy) + [CTRL K_BKSP] > index(light2heavy,1) 
+
+c Heavy vowel - high tone
+any(heavy) + [']'] > context U+0301
+any(heavy) U+0301 + [K_BKSP] > nul
+any(heavy) U+0301 + [CTRL K_BKSP] > context(1)
+
+c Heavy vowel - low tone
+any(heavy) + [SHIFT ']'] > context U+0303 
+any(heavy) U+0303 + [K_BKSP] > nul
+any(heavy) U+0303 + [CTRL K_BKSP] > context(1)
+
+c Heavy tone - falling tone
+U+1eb9 + ['\'] > U+1ec7
+U+1ec7 + [K_BKSP] > nul
+U+1ec7 + [CTRL K_BKSP] > U+1eb9
+
+U+1ecb + ['\'] > U+1ecb U+0302 
+U+1ecb U+0302 + [K_BKSP] > nul
+U+1ecb U+0302 + [CTRL K_BKSP] > U+1ecb
+
+U+1ecd + ['\'] > U+1ed9
+U+1ed9 + [K_BKSP] > nul
+U+1ed9 + [CTRL K_BKSP] > U+1ecd
+
+U+1ee5 + ['\'] > U+1ee5 U+0302
+U+1ee5 U+0302 + [K_BKSP] > nul
+U+1ee5 U+0302 + [CTRL K_BKSP] > U+1ee5
+
+U+1eb8 + ['\'] > U+1ec6  
+U+1ec6 + [K_BKSP] > nul
+U+1ec6 + [CTRL K_BKSP] > U+1eb8
+
+U+1eca + ['\'] > U+1eca U+0302
+U+1eca U+0302 + [K_BKSP] > nul
+U+1eca U+0302 + [CTRL K_BKSP] > U+1eca
+
+U+1ecc + ['\'] > U+1ed8
+U+1ed8 + [K_BKSP] > nul
+U+1ed8 + [CTRL K_BKSP] > U+1ecc
+
+U+1ee4 + ['\'] > U+1ee4 U+0302 
+U+1ee4 U+0302 + [K_BKSP] > nul
+U+1ee4 U+0302 + [CTRL K_BKSP] > U+1ee4
+
+c glotal and impolsive
++ [';'] > 'ʼ'
++ [SHIFT ';'] > nul 
+
+c displaced characters
+
++ [SHIFT '.'] > ':'
++ [SHIFT ','] > ';'
++ [RALT ','] > '<'
++ [RALT '.'] > '>'
++ [RALT '['] > "["
++ [SHIFT RALT '['] > "{"
++ [RALT ']'] > ']'
++ [SHIFT RALT ']'] > '}'
++ [RALT '\'] > '\'
++ [SHIFT RALT '\'] > '|'
+
+c EOF

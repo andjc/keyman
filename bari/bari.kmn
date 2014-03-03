@@ -1,0 +1,37 @@
+﻿c bari.kmn
+c 
+c Bari 1.0
+c 
+c Keyboard layout designed for Bari, Kuku and Kakwa.
+c 
+c 
+c Andrew Cunningham    2008-09-14
+c andrewc AT vicnet.net.au
+c 
+
+store(&VERSION) '7.0'
+store(&NAME) 'Bari'
+store(&COPYRIGHT) '© State Library of Victoria 2009'
+store(&MESSAGE) 'Unicode keyboard layout for Bari, Kakwa and Kuku.'
+store(&ETHNOLOGUECODE) 'bfa, keo'
+store(&BITMAP) 'bari.ico'
+store(&VISUALKEYBOARD) 'bari.kvk'
+begin Unicode > use(constraints)
+store(extended_Key) "[{]}\|" 
+store(extended_Char) U+02BC U+02BC U+00F6 U+00D6 U+014B U+014A
+store(digraph_Base) "bBdDyY" 
+
+
+group(constraints) using keys
+U+02BC + notany(digraph_Base) > context beep
+
+nomatch > use(main)
+
+group(main) using keys
+
++ any(extended_Key) > index(extended_Char,1)
+U+02BC any(digraph_Base) + [K_BKSP] > null
+
+
+ 
+c EOF

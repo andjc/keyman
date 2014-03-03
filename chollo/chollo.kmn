@@ -1,0 +1,62 @@
+﻿c chollo.kmn
+c 
+c Dhøg Cøllø 1.0
+c 
+c http://www.openroad.net.au/chollo
+c 
+c A Unicode keyboard layout for Chollo (Shilluk).
+c Suitable for mixed typing in English and Chollo.
+c Created for the Australian Chollo Community, Inc.
+c 
+c This keyboard package requires a commercial program Keyman Desktop.
+c Which is available from http://www.tavultesoft.com/
+c 
+c This keyboard package is free software: you can redistribute it and/or modify
+c it under the terms of the GNU General Public License as published by
+c the Free Software Foundation, version 3 of the License.
+c 
+c This program is distributed in the hope that it will be useful,
+c but WITHOUT ANY WARRANTY; without even the implied warranty of
+c MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+c GNU General Public License for more details.
+c 
+c You should have received a copy of the GNU General Public License
+c along with this program.  If not, see <http://www.gnu.org/licenses/>.
+c 
+c Keyboard documentation is licensed under the Creative Commons
+c Attribution-Non-Commercial-Share Alike 2.5 Australia License.
+c To view a copy of this licence, visit
+c http://creativecommons.org/licenses/by-nc-sa/2.5/au/ or send a letter to
+c Creative Commons, 171 Second Street, Suite 300,
+c San Francisco, California 94105, USA.
+c 
+c This keyboard source file was developed by Vicnet,
+c a division of the State Library of Victoria as part of
+c the Open Road project’s Language enablement initiative.
+c 
+c 
+c Andrew Cunningham    2009-09-20
+c andrewc AT vicnet.net.au
+c lang.support AT gmail.com
+
+store(&VERSION) '7.0'
+store(&NAME) 'Dhøg Cøllø'
+store(&MESSAGE) 'A keyboard layout for Chollo (Shilluk)'
+store(&BITMAP) 'chollo.ico'
+store(&VISUALKEYBOARD) 'chollo.kvk'
+store(&ETHNOLOGUECODE) 'shk'
+store(&COPYRIGHT) '© State LIbrary of Victoria 2009'
+begin Unicode > use(main)
+
+store(extKeys) "fFqQsSvVxX"
+store(extChars) "ïÏëËäÄøØöÖ"
+store(altKeys) [RALT K_V] [RALT K_X] [RALT K_F] [RALT K_S] [RALT K_Q] [RALT K_Z] \
+               [SHIFT RALT K_V] [SHIFT RALT K_X] [SHIFT RALT K_F] [SHIFT RALT K_S] [SHIFT RALT K_Q] [SHIFT RALT K_Z] \
+               [RALT K_C] [RALT K_E] [RALT K_4]
+store(altChars) "vxfsqzVXFSQZ" U+00A9 U+20AC U+00A3  
+
+group(main) using keys
++ any(extKeys) > index(extChars,1)
++ any(altKeys) > index(altChars,1)
+
+c EOF
