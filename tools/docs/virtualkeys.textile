@@ -1,0 +1,21 @@
+h1. Virtual keys
+
+    S = SHIFT
+    A = ALT
+    RA = RALT
+    LA = LALT
+    C = CTRL
+    LC = LCTRL
+    RC = RCTRL
+    
+    SA = SHIFT ALT
+    SRA = SHIFT RALT
+    SLA = SHIFT LALT
+    
+    SC = SHIFT CTRL
+    SRC = SHIFT RCTRL
+    SLC = SHIFT LCTRL
+    
+    CA = CTRL ALT
+    SCA = SHIFT CTRL ALT
+

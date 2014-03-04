@@ -1,0 +1,21 @@
+h1. Converting MacOS X XML keyboard layouts to MSKLC .klc files
+
+h2. Usage
+
+*mac2winKeyboard*
+Converts Mac keyboard layout files (.keylayout) to equivalent Windows files (.klc).
+
+h3. Options
+
+<pre><code class="bash">
+	python mac2winKeyboard [-u] [-h]
+
+	-u	: write usage
+	-h	: show help for further explanation.
+</code></pre>
+
+h3. Usage
+
+<pre><code class="bash">
+	python mac2winKeyboard inputfile.keylayout
+</code></pre>

@@ -1,0 +1,82 @@
+h1. Creating keyboard layouts with _Key Curry_
+
+_Key Curry_ is a web application component that allows you to easily type many world languages and specialized orthographies in web forms and rich internet applications. The software uses a user interface framework called _Gladiator Components_ and the popular _jQuery_ JavaScript library as a foundation and works in the latest versions of Google Chrome, Firefox, Safari, Opera (limited feature set), and Internet Explorer version 9 (limited feature set).
+
+_Key Curry_ can use two different formats to specify keyboard layouts: a modified version of the Yudit "keymap":http://yudit.org/en/howto/keymap/ files (.kmap), and a JSON (.jkm) file. The following notes describe _Key Curry's_ .jkm files.
+
+h2. JKM file format
+
+"Key Curry":http://unifont.org/keycurry/ uses a *jkm* (JSON Keymap format) UTF-8 (BOM-less) JSON file format for keyboard layouts used with _Key Curry_. _Key Curry_ keyboard layout files have the extension 
+
+JSON, or JavaScript Object Notation, is a lightweight text-based open standard designed for human-readable data interchange, where simple data structures and associative arrays are represented. Each data set is referred to as an object. each keyboard layout (key map) is represented as an object. The following notes document various aspects of writing keyboard layouts for _Key Curry_.
+
+h3. Default template
+
+<pre><code class="json">
+ {
+ "title":"",
+ "author":"",
+ "email":"",
+ "copyright":"",
+ "license":"",
+ "info":"",
+ "script":"",
+ "keymap":{
+
+ }}
+</code></pre>
+
+h3. Template for lesser used language
+
+<pre><code class="json">
+ {
+ "title":"",
+ "author":"",
+ "email":"",
+ "copyright":"",
+ "license":"",
+ "info":"",
+ "script":"",
+ "suggestedFont":"",
+ "suggestedFontFileName":"",
+ "preferSuggestedFont":"",
+ "keymap":{
+
+ }}
+</code></pre>
+
+h2. JSON Keymap format
+
+
+|_.Key |_.Definition |_.Required? |
+|*title* |Keyboard layout title |Yes |
+|*author* |Author's name |Yes |
+|*email* |Author's email address |Yes |
+|*copyright* |Copyright statement |Yes |
+|*license* |License keyboard layout is released under. For upstream acceptance into the Key Curry code repository should be cc-sa or GPL |Yes |
+|*info* |Information about, or description of, keyboard layout |Yes |
+|*script* |"ISO 15924":http://unicode.org/iso15924/iso15924-codes.html four letter script code |Yes |
+|*keymap* |Object containing key-value pairs describing input and output rules for keyboard layout. US-QWERTY keyboard layout assumed in Key Curry 1.0 |Yes |
+
+Required field indicated if Key value pair is required for required for upstream acceptance into the Key Curry code repository
+
+Some keyboard layouts will be supporting languages or writing scripts with limited
+
+|_.Key |_.Definition |_.Required? |
+|*suggestedFont* |Font family name |No |
+|*suggestedFontFileName* |Font file name for font located on server containing Key Curry. Required for font to be loaded |No |
+|*preferSuggestedFont* |Override font selection or default system fonts. _Currently only used for Urdu Nastaliq_ |No |
+
+If non-standard font is required for keyboard layout, an OFL (or possibly GPL) licensed font should be included with a key map submission, if submitted for inclusion in the Key Curry repository.
+
+
+
+
+h2. Keymap object
+
+The *keymap* object contains the rules that control key and character assignments in _Key Curry_
+
+h2. Validation
+
+* "JSONLint":http://jsonlint.com
+* "Python JSON module and lint checker":http://deron.meranda.us/python/demjson/

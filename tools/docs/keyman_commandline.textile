@@ -1,0 +1,44 @@
+h1. Keyman developer from the commandline
+
+h2. importkeyboard.exe (Tavultesoft)
+
+Information available in Tavultesoft "blog post":http://blog.tavultesoft.com/2011/07/how-to-import-a-windows-keyboard-layout-into-a-keyman-desktop-keyboard.html
+
+<pre><code>
+Usage: importkeyboard /list | [/kmw] hkl [output.kmn]
+
+ /list shows a list of keyboards available on your system.
+
+  /kmw should be specified to target KeymanWeb.  When using KeymanWeb, the imported keyboard will:
+    * Ignore CAPS/NCAPS
+    * Convert RALT to CTRL+ALT
+
+hkl should be an 8 hex digit [[Keyboard_IDs|Keyboard ID]].  See /list to enumerate these.
+
+If output.kmn is not specified, the filename of the source keyboard will be used; e.g. 00000409 will produce kbdus.kmn
+
+</code></pre>
+
+
+h2. kmcomp.exe (Keyman Developer)
+
+<pre><code>
+kmcomp.exe
+Tavultesoft Keyman Developer Compiler
+Version 8.0.326.0, released 1 Jun 2000  Copyright ® 1994-2006
+Tavultesoft Pty Ltd.  All Rights Reserved.
+
+Usage: kmcomp [-s] [-d] [-e ["Installer.msi" [-u]]] infile [outfile.kmx|outfile.js [error.log]]
+  or   kmcomp -x filetoencrypt [product.pxx]
+         infile        can be a .kmn file (Keyboard Source, .kps file (Package Source), or .kpp file (Product Source)
+         outfile.kmx   can only be specified for a .kmn infile
+         outfile.js    write a KeymanWeb file - only if KeymanWeb Pack installed
+         filetoencrypt is the .kmx or .kct file to encrypt.  If .kmx, then product.pxx must also be specified.
+
+         -d   include debug information
+         -s   silent; don't display unnecessary information on screen
+         -p   set Keyman runtime source path to RuntimeSourcePath
+         -e   create a .exe installer for a package as well, using installer.msi if specified
+         -u   update .kps to refer to latest version of Installer.msi
+
+</code></pre>
