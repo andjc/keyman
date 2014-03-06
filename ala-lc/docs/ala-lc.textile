@@ -1,0 +1,7 @@
+h1. ALA-LC Romanization Tables
+
+* "ALA-LC Romanization Tables":http://www.loc.gov/catdir/cpso/roman.html
+* "Character Sets Used in Romanization":http://www.loc.gov/marc/specifications/speccharintro.html
+* "Source Documents for Romanization Tables":http://www.loc.gov/catdir/cpso/romansource.html
+* "Romanization Landscape":http://www.loc.gov/catdir/cpso/romlandscape_Oct2011.html
+
